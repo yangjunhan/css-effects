@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tiktok</title>
+  </head>
+  <style>
+    @keyframes glitch {
+      2%,
+      64% {
+        transform: translate(8px, 0) skew(0deg);
+      }
+      4%,
+      60% {
+        transform: translate(-8px, 0) skew(0deg);
+      }
+      62% {
+        transform: translate(0, 0) skew(10deg);
+      }
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: #000000;
+    }
+
+    .tiktok {
+      position: relative;
+      width: 38px;
+      height: 220px;
+      background-color: #fff;
+      filter: drop-shadow(-10px -10px 0 #24f6f0) brightness(110%);
+      box-shadow: 12px 10px 0 0 #fe2d52;
+      z-index: 1;
+      animation: glitch 1s linear infinite;
+    }
+
+    .tiktok:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 38px solid #fff;
+      border-top: 38px solid transparent;
+      border-radius: 50%;
+      top: 120px;
+      left: -138px;
+      transform: rotate(45deg);
+      filter: drop-shadow(16px 0px 0 #fe2d52) brightness(110%);
+    }
+
+    .tiktok::after {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border: 38px solid transparent;
+      border-bottom-color: #fff;
+      top: -108px;
+      right: -178px;
+      border-radius: 100%;
+      transform: rotate(45deg);
+      filter: drop-shadow(14px 0 0 #fe2d52) brightness(110%);
+    }
+  </style>
+  <body>
+    <div class="tiktok"></div>
+  </body>
+</html>
