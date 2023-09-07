@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Menu Button</title>
+<!--  Reference: Pure CSS Hamburger fold-out menu https://codepen.io/erikterwan/pen/EVzeRP -->
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+    
+    .button-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .button-container input {
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 40px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+    }
+
+    .button-container span {
+        display: block;
+        height: 4px;
+        width: 33px;
+        margin-bottom: 4px;
+        background: tomato;
+        border-radius: 2px;
+        transform-origin: 4px 0;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.5s ease;
+        z-index: 1;
+    }
+
+    .button-container span:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .button-container input:checked ~ span {
+        opacity: 1;
+        transform: rotate(-45deg) translate(-2px, -1px);
+    }
+
+    .button-container input:checked ~ span:first-of-type {
+        transform: rotate(45deg) translate(0, -1px);
+    }
+
+    .button-container input:checked ~ span:nth-last-child(2) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+</style>
+<body>
+  <div class="button-container">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</body>
+</html>
