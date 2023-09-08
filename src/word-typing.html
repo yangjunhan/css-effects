@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Word Typing</title>
+  <!-- Reference: CSS Typing Effect https://codepen.io/denic/pen/GRoOxbM -->
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        user-select: none;
+    }
+    
+    @keyframes cursor-blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    @keyframes typing {
+        from {
+            width: 0
+        }
+    }
+    
+    .typing-effect {
+        width: 26ch;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid black;
+        color: black;
+        font-family: monospace;
+        font-size: 2em;
+        animation: typing 3s steps(26), cursor-blink .5s step-start infinite alternate;
+    }
+</style>
+<body>
+  <div class="container">
+    <div class="typing-effect">
+      I love frontend very much.
+    </div>
+  </div>
+</body>
+</html>
