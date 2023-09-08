@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Loader</title>
+  <!-- Reference: AI Loader https://codepen.io/vihanga/pen/YzRVeze -->
+</head>
+<style>
+    body {
+        margin: 0
+    }
+
+    .demo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .circle {
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        border: 2px solid rgba(220, 128, 109, 0.5);
+        border-bottom-color: rgba(151, 93, 193, 0.5);
+        border-left-color: rgba(151, 93, 193, 0.5);
+        transform-style: preserve-3d;
+        backdrop-filter: blur(0.5px);
+        opacity: 0;
+    }
+
+    @keyframes rotate {
+        from {
+            opacity: 1;
+            transform: rotate3d(0, 1, 1, 360deg);
+        }
+        to {
+            opacity: 1;
+            transform: rotate3d(0, 1, 1, 0deg);
+        }
+    }
+
+    @keyframes rotate-inverse {
+        from {
+            opacity: 1;
+            transform: rotate3d(0, 1, 1, 0deg);
+        }
+        to {
+            opacity: 1;
+            transform: rotate3d(0, 1, 1, 360deg);
+        }
+    }
+</style>
+<script>
+  function addCircleStylesById(id, div, half) {
+    if (id <= half) {
+      div.style.transform = `rotate3d(0, 1, 0, (360deg / 15) * ${id})`;
+      div.style.animation = 'rotate 2s linear infinite';
+    } else {
+      div.style.transform = `rotate3d(1, 0, 0, (360deg / 15) * ${id})`;
+      div.style.animation = 'rotate-inverse 3s linear infinite';
+    }
+    div.style.animationDelay = 2 / 15 * +id + 's';
+  }
+
+  addEventListener('load', () => {
+    const totalIds = 15;
+    const half = Math.floor(totalIds / 2);
+    for (let i = 1; i <= totalIds; i++) {
+      const circleDiv = document.querySelector('.circle-' + i);
+      if (circleDiv) {
+        addCircleStylesById(i, circleDiv, half);
+      }
+    }
+  });
+</script>
+<body>
+<div class="demo-container">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+    <div class="circle circle-4"></div>
+    <div class="circle circle-5"></div>
+    <div class="circle circle-6"></div>
+    <div class="circle circle-7"></div>
+    <div class="circle circle-8"></div>
+    <div class="circle circle-9"></div>
+    <div class="circle circle-10"></div>
+    <div class="circle circle-11"></div>
+    <div class="circle circle-12"></div>
+    <div class="circle circle-13"></div>
+    <div class="circle circle-14"></div>
+    <div class="circle circle-15"></div>
+</div>
+</body>
+</html>
+
