@@ -8,6 +8,9 @@ originally created from the Internet. The demos are implemented in purely HTML +
 
 ![demo_dynamic_menu_button.gif](assets/gif/demo_dynamic_menu_button.gif)
 
+### Rotating Squares
+![demo_rotating_squares.gif](assets/gif/demo_rotating_squares.gif)
+
 ### Glitch Text
 
 ![demo_glitch_text.gif](assets/gif/demo_glitch_text.gif)
