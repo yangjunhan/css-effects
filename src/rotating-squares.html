@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rotating Squares</title>
+</head>
+<style>
+    body {
+        margin: 0
+    }
+
+    .demo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .rotate-box {
+        position: absolute;
+        display: flex;
+        width: 40px;
+        height: 40px;
+        background-color: #FFF;
+        border: 4px solid;
+    }
+
+    .rotate-box-1 {
+        border-color: #FA8072;
+        animation: rotate-clockwise 3s ease-in-out 0s infinite alternate;
+        z-index: 0;
+    }
+
+    .rotate-box-2 {
+        border-color: #6495ED;
+        animation: rotate-anticlockwise 3s ease-in-out 0s infinite alternate;
+        z-index: 1;
+    }
+
+    @keyframes rotate-clockwise {
+        0% {
+            transform: rotate(0);
+        }
+
+        25% {
+            transform: rotate(90deg);
+        }
+
+        50% {
+            transform: rotate(180deg);
+        }
+
+        75% {
+            transform: rotate(270deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes rotate-anticlockwise {
+        0% {
+            transform: rotate(360deg);
+        }
+
+        25% {
+            transform: rotate(270deg);
+        }
+
+        50% {
+            transform: rotate(180deg);
+        }
+
+        75% {
+            transform: rotate(90deg);
+        }
+
+        100% {
+            transform: rotate(0);
+        }
+    }
+</style>
+<body>
+  <div class="demo-container">
+    <div class="rotate-box rotate-box-1"></div>
+    <div class="rotate-box rotate-box-2"></div>
+  </div>
+</body>
+</html>
+
