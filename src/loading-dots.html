@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading Dots</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        background: #fff;
+    }
+
+    @keyframes spin {
+        0%, 100% {
+            transform: translate(0);
+        }
+        25% {
+            transform: translate(160%);
+        }
+        50% {
+            transform: translate(160%, 160%);
+        }
+        75% {
+            transform: translate(0, 160%);
+        }
+    }
+    
+    .dot {
+        position: absolute;
+        border-radius: 50%;
+        background: tomato;
+        height: 32px;
+        width: 32px;
+        transform: translate(0);
+        animation: spin 2s ease infinite;
+    }
+    
+    .first {
+        animation-delay: -1.5s;
+    }
+    
+    .second {
+        animation-delay: -1s;
+    }
+    
+    .third {
+        animation-delay: -0.5s;
+    }
+</style>
+<body>
+  <div class="container">
+    <div class="dot first"></div>
+    <div class="dot second"></div>
+    <div class="dot third"></div>
+    <div class="dot fourth"></div>
+  </div>
+</body>
+</html>
